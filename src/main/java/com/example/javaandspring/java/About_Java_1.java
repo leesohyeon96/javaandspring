@@ -1,7 +1,5 @@
 package com.example.javaandspring.java;
 
-import java.sql.SQLOutput;
-
 public class About_Java_1 {
 
     public static void main(String[] args) {
