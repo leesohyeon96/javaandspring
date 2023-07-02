@@ -1,5 +1,7 @@
 package com.example.javaandspring.java;
 
+import java.sql.SQLOutput;
+
 public class About_Java_1 {
 
     public static void main(String[] args) {
@@ -10,10 +12,15 @@ public class About_Java_1 {
 
 
         // 3-3. 다형성
-        Me me = new Me();
-        me.doSomething();
-        Developer developer = new Developer();
-        developer.doSomething();
+//        Me me2 = new Developer();
+//        me2.doSomething();
+
+        // 3-4. 캡슐화
+//        Encapsulation encapsulation = new Encapsulation();
+//        encapsulation.method();     // 모든 클래스에서 접근 가능
+//        encapsulation.method2();    // 다른 패키지의 확장한 클래스까지 접근 가능
+//        encapsulation.method3();    // 동일 패키지 내에서만 접근 가능
+//        encapsulation.method4();    // 동일 클래스 내에서만 접근 가능
 
     }
 
@@ -78,6 +85,7 @@ public class About_Java_1 {
 
     // 3-3. 다형성 예시
     // - 다형성은 한 타입의 참조변수를 통해 여러 타입의 객체를 참조할 수 있도록 만든 것을 의미함
+    //   (구체적으로 상위 클래스 타입의 참조변수로 하위 클래스의 객체를 참조할 수 있도록 하는 것)
     // - '나는 친구가 될 수도 있고, 회사원이 될 수도 있고, 개발자가 될 수도 있고, 결혼해서 부모가 될 수도 있다'
     // - ex) 오버라이딩, 오버로딩
     // -> 보통 인터페이스로 하는데 클래스로 일단락한다.
@@ -102,6 +110,25 @@ public class About_Java_1 {
     }
 
     // 3-4. 캡슐화 예시
-    // - 숨겨둔다
+    // - 클래스 안에 있는 속성/기능들을 하나의 캡슐로 만들어 데이터를 외부로부터 보호하는 것
+    // - 이유: 데이터 보호(외부로부터 클래스에 정의된 필드, 메소드 보호), 데이터 은닉(내부 메소드 숨기고, 외부에 필요한 부분만 노출)
+
+    static class Encapsulation {
+        public void method() {
+            System.out.println("public method");
+        }
+
+        protected void method2() {
+            System.out.println("protected method");
+        }
+
+        void method3() {
+            System.out.println("default method");
+        }
+
+        private void method4() {
+            System.out.println("private method");
+        }
+    }
 
 }
