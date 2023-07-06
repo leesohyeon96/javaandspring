@@ -51,15 +51,30 @@ public class What_is_JVM {
             //- JIT 컴파일러(Just-in-Time) -> 인터프리터 방식으로 실행하다가 적절한 시점에 바이트 코드 전체를 컴파일 하여 기계어로(바이너리 코드?) 변경 후, 이후에 더 이상 인터프리팅 하지 않고 기계어로 직접 실행
             //- 가비지 콜렉터(Garbage collector) -> 더 이상 사용되지 않는 인스턴스를 찾아 메모리에서 삭제함
         //- 런타임 데이터 영역 (Runtime Data Area) -> 프로그램을 수행하기 위해 OS에서 할당받는 메모리 공간
+            // - Heap/Method/여러개의Thread(그 내부에 여러개의Stack) => Heap, Method 영역은 모든 스레드들이 공유함
+            //                                                  스레드마다 PC Register, Native Method Stack이 생성되며 스레드가 종료될 때 사라짐
+            //                                                  모든 스레드들이 실행 후 종료되면 Heap, Method 영역도 종료됨
             // -> PC Register : Thread가 시작될 때 생성되며 > 생성될 때마다 생성되는 공간, 스레드마다 1개씩 존재!
-            //                  Thread가 어떤 부분을 어떤 명령으로 실행해야할 지에 대한 기록을 하는 부분 + 현재 수행 중인 JVM 명령의 주소를 가짐
+            //                  Thread가 어떤 부분을 어떤 명령으로 실행해야할 지에 대한 기록을 하는 부분 + [*JVM이 현재 수행 중인 명령어의 주소를 가짐]
+            // -> Stack : Frame 이라는 자료구조를 저장 + C 같은 전통적인 언어의 스택구조와 비슷(지역변수, 함수의 실행결과를 저장하며 함수 호출/반환을 담당 -> 내가 아는 그 스택임ㅇㅇ)
+            //          - Frame : 데이터, 반환 값을 저장하는 자료구조
+            // -> Native Method Stack : 다른 언어로 작성된 코드를 실행할 때 사용되는 스택
+            // -> Heap : 클래스의 인스턴스들(객체)과 배열들이 저장되는 공간 + 가비지 컬렉션이라는 동적 메모리 관리 시스템에 의해 관리됨
+            // -> Method : 런타임 상수, 풀, 필드, 함수, 코드 등 클래스와 인터페이스의 구조가 저장되는 공간
+            //          - Runtime Constant Pool : 클래스, 인터페이스마다 존재하며 클래스 파일의 Constant pool 테이블 영역이 저장되는 공간
+            //
 
     // 2. JDK란?
     // - Java Development Kit(자바 개발 키트)
     // - *Java를 사용하기 위해 필요한 '모든 기능을 갖춘 Java용 SDK(Software Development Kit)임!)
+    // - JDK = JRE + JVM
+    // - JRE = JVM + 클래스 라이브러리들
         // - SDK란? -> 하드웨어플랫폼/운영체제/프로그래밍언어제작사가 제공하는 '툴' + SDK를 활용하여 '애플리케이션 개발'할 수 있음!
 
     // 3. 자바가 동작하는 원리(= 자바 프로그램 실행과정)
+    // - 1. java code(.java)가 javac Compiler에 의해 Byte Code(.class)로 변환된다.
+    // - 2. JVM 메모리 구조 중 하나인 Execution Engine에 의해 [인터프리터 + JIT 컴파일러] Native Code(아마 바이너리 코드인듯)로 변환되어 실행된다.
+    // -> 자세한 것은 JVM 명세에 작성되지 않음(WHY? 창의력을 저해시킬 수 있어서 명시하지 않았다고 함)
 
 
     // 4. stack, heap, static
