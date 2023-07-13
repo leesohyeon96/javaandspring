@@ -34,4 +34,9 @@ public class What_is_JAVAEE_etc {
 
     // [결론]
     // - Java EE = Java SE + API(lib 디렉토리에 포함되어 있는 Jar 파일들)
+
+    // [추가]
+    // - Java EE 8 이후로 오라클이 팔음 -> JaKarta EE(8, 9) 로 전환됨(2018년)
+    //   javax.* -> jakarta.* 로 변경됨
+    // - Spring 5.0버전은 자카르타와 자바ee가 혼재되어 있음
 }
