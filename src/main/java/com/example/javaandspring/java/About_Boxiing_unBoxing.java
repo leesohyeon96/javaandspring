@@ -22,4 +22,5 @@ public class About_Boxiing_unBoxing {
         //        unboxing 시 4배정도 많은 시간 소요
 
     // -> object 장점도 가져가며 성능적 이슈를 해결하기 위해 나온 것이 "Generic"임
+    //    (제네릭은 primitive type을 받지 않음)
 }
