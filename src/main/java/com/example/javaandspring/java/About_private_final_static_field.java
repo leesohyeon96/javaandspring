@@ -50,4 +50,51 @@ public class About_private_final_static_field {
 //    }
 
     // ex) Integer 클래스 -> final class 임! 재정의 불가능하도록 함
+
+
+    // 2. static
+        // - 클래스를 만들고 객체를 생성하면 해당 객체마다 변수를 저장하기 위한 메모리가 별도로 할당됨
+        // - 이때, 이 변수가 값이 항상 변하지 않는다면 static 을 사용해
+        //   자바가 메모리 할당을 딱 한번만 하게 되어 메모리 낭비를 막을 수 있음
+
+    class StaticClass {
+        static String notChange = "안변한다";
+    }
+
+     class Sample {
+         public static void main(String[] args) {
+//             StaticClass staticClass = new StaticClass();
+         }
+     }
+
+        // - static을 사용하면 '같은 곳의 메모리 주소'만을 바라보기 때문에 static 변수의 값을 공유하게 됨
+    class Count {
+        static int count = 0; // static을 안붙이면 count 변수가 공유되지 않지만(서로 다른 메모리를 가리키고 있어서) static을 붙이면 값이 공유되어 count값이 2가 되어 출력됨
+        Count() {
+            count++;
+        }
+    }
+
+    class Sample2 {
+        public static void main(String[] args) {
+//            Count c1 = new Count();
+//            Count c2 = new Count();
+        }
+    }
+
+        // - static 메소드는 클래스를 이용하여 호출
+        // - static 메소드 안에서는 '객체 변수 접근' 불가능
+        class Count2 {
+            static int count = 0; // static을 안붙이면 count 변수가 공유되지 않지만(서로 다른 메모리를 가리키고 있어서) static을 붙이면 값이 공유되어 count값이 2가 되어 출력됨
+            int count2 = 0;
+            Count2() {
+                count++;
+            }
+
+            public static int getCount() {
+//                System.out.println(count2); // 컴파일 에러
+                return count; // static 메소드 내에서 static 변수는 접근 가능, 객체 변수는 접근 불가능
+            }
+        }
+        // - 보통 static메소드는 유틸리티성 메소드를 작성할 때 많이 사용됨
 }
