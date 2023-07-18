@@ -97,4 +97,11 @@ public class About_private_final_static_field {
             }
         }
         // - 보통 static메소드는 유틸리티성 메소드를 작성할 때 많이 사용됨
+
+ㄷ
+    // - staitc import문이란?
+        // - JDK1.5부터 추가된 기능임
+        // - import문을 사용하면 '클래스의 패키지명'을 생략할 수 있는 것과 같이
+        //   static import문을 사용하면 static 멤버를 호출할 때 클래스명을 생략할 수 있음
+        //   but, 남용하면 독이 될 수 있음 -> 마치 현재 클래스의 멤버인 것처럼 사용할 수 있기 때문에 혼동을 줄 수 있음
 }
