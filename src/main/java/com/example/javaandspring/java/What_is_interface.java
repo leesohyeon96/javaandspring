@@ -13,4 +13,22 @@ public class What_is_interface {
             // - 인터페이스는 only '추상 메소드'와 '상수'만 포함 가능하다는 차이점!
 
         // - 인터페이스 선언 -> 접근제어자 interface 인터페이스 이름
+        // - 장점
+            // -  클래스와 클래스 간의 관계를 인터페이스로 연결하면, 클래스마다 독립적인 프로그래밍이 가능함
+
+        // - 자바8부터 default메소드(암시적 public)와 static메소드를 추가할 수 있는데
+            // - 인터페이스가 여러곳에서 사용되고 있는 상황에 새로운 추상메소드를 추가하면
+            //   모든 곳에서 오버라이딩(ㄷㄷ) 해야되기 떄문에 나온 것이 '구현부를 가질 수 있는' default메소드!
+}
+
+interface Test {
+    default void defaultMethod() {
+        System.out.println("나는 디폴트 메소드다!");
+    }
+
+    void abstractMethod();
+
+    static void staticMethod() {
+        System.out.println("나는 스태틱 메소드다!");
+    }
 }
