@@ -71,4 +71,45 @@ public class 객체생성과파괴 {
     // Test test = new Test();
     // test.setXX(test2);
 
+// 근데 이것도 set 다 할때까지 안정성 등이 없는 단점이 있어서 나온것이
+// - 점층적 생성자 패턴의 안정성 + 자바 빈즈 패턴의 가독성을 겸비한 '빌더 패턴'임!
+
+// *빌더 패턴
+// - 필요한 객체를 직접 만드는 대신, 필수 매개변수만으로 생성자(or 정적 팩토리)를 호출해
+//   빌더 객체를 얻음
+//   빌더는 '생성할 클래스 안에 정적 멤버 클래스로 만들어 둠'
+// https://inpa.tistory.com/entry/GOF-%F0%9F%92%A0-%EB%B9%8C%EB%8D%94Builder-%ED%8C%A8%ED%84%B4-%EB%81%9D%ED%8C%90%EC%99%95-%EC%A0%95%EB%A6%AC 참고
+
+// 필수매개변수, 선택매개변수를
+//  public class TEST {
+// -> public static class Builder {
+//    // 필수 매개변수
+//    private final int test;
+//    // 선택 매개변수
+//    private final int test2 = 0;
+//
+//    public Builder(int test) {
+//      this.test = test;
+//      }
+//
+//    public Builder test2(int val) {
+//      test2 =  cal
+//      return this;
+//      }
+//    }
+//
+//    public TEST build() {
+//      return new TEST(this);
+//    }
+//   }
+//
+//  private TEST(Builder builder) {
+//      test = builder.test;
+//      test2 = builder.test2;
+//    }
+// }
+
+    // 40페이지부터 다시 ! 
+    
+    // 118까지ㄱㄱ
 }
