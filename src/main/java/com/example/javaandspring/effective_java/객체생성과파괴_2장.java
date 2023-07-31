@@ -1,6 +1,9 @@
 package com.example.javaandspring.effective_java;
 
-public class 객체생성과파괴 {
+import java.util.List;
+
+public class 객체생성과파괴_2장 {
+
 //    (32~33페이지)
 //  1. 인터페이스에 정적 메소드를 선언할 수 있다
 //  -> 이로인한 장점? (그전에는 선언할 수 없었음)
@@ -134,6 +137,7 @@ public class 객체생성과파괴 {
 //}
 
 // *팩토리 메소드 패턴
+
     // - Supplier<T> 인터페이스가 팩터리의 완벽한 예
     // https://bcp0109.tistory.com/367 참고
     // - 생성 패턴 중 하나로 '객체를 생성할 때 어떤 클래스의 인스턴스를 만들 지 서브 클래스에서 결정'하게 하는 것
