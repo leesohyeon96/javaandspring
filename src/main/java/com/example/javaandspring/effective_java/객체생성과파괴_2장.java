@@ -185,10 +185,4 @@ public class 객체생성과파괴_2장 {
     // - try-with-resources에서도 catch 절을 쓸 수 있음
     // [결론] 꼭 회수해야하는 자원을 다룰 땐 try-with-resources를 사용하자
 
-
-
-
-
-    // 61
-    // 118까지ㄱㄱ
 }

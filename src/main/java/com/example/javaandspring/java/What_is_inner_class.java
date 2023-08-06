@@ -1,6 +1,7 @@
 package com.example.javaandspring.java;
 
 public class What_is_inner_class {
+    int test = 1;
     // 내부 클래스/중첩클래스(=inner class)
         // - 하나의 클래스로 '클래스'나 '인터페이스 내부'에서 선언
         // - 내부에 정의된다는 점을 제외하고는 일반적인 클래스와 똑같음
@@ -26,6 +27,11 @@ public class What_is_inner_class {
             class InstanceInner {
                 static int cost2 = 100; //?인제되나?
                 static final int cost = 100; // 얘는 final static은 상수이므로 허용
+
+                public void test() {
+                    System.out.println(test); // 원래 지역변수접근의 경우 final이 붙어야 가능하지만 JDK1.8이후로 컴파일러가 알아서 붙여줌
+                    // but, 이때 test변수에 값을 다시 주는 경우 final 상수가 아닌 변수로 취급되기에 접근 불가능함
+                }
             } // 인스턴스 클래스
             // What_is_inner_class.InstanceInner s = new What_is_inner_class().new InstanceInner();
             // -> 요런 식으로 꺼내야 함
