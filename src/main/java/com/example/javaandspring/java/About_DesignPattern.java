@@ -17,6 +17,39 @@ public class About_DesignPattern {
                 // Prototype
          // - 구조 패턴(Structural Pattern)
             // - 클래스와 객체를 조합하는 방식을 정형화한 패턴
+            // - 종류
+                // Adapter
+                // Bridge
+                // Composite
+                // Decorate
+                // Facade
+                // Flyweight
+                // Proxy
         // - 행동 패턴(Behavioral Pattern)
             // - 클래스와 객체들의 상호 작용과 책임 분산을 정리한 패턴
+            // - 종류
+                // Observer
+                // Command
+                // Interpreter
+                // Iterator
+                // Mediator
+                // Memento
+                // State
+                // Strategy
+                // Template Method
+                // Vistor
+
+
+
+    // 구조 패턴 - 어뎁터(Adapter)패턴
+        // 정의: 호환되지 않는 인터페이스들을 연결하는 디자인 패턴
+        // 특징: 기존 클래스 수정하지 않고도 특정 인터페이스에서 필요로 하는 코드에서 사용할 수 있게 해줌
+        // 구성요소[4가지]
+            // - 타겟: 클라이언트가 직접적으로 호출하는 interface
+            // - 어뎁티: 아직 호환되지 않은 기존 클래스(or 인터페이스)
+            // - 어뎁터: 타겟 interface를 구현하여 클라이언트 요청을 어뎁티로 전달하는 클래스
+            // - 클라이언트: 특정 작업을 요청하는 클래스
+    class Adapter {
+
+    }
 }
